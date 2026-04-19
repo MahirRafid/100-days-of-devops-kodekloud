@@ -1,0 +1,21 @@
+Day 1: Linux User Setup with Non-Interactive Shell
+
+** Need to login as root user for both solutions.
+=> Sol-1: 
+	- which nologin
+	- sudo useradd -m -s /usr/sbin/nologin james
+	- su - james
+
+=> Sol-2: 
+	- which false
+	- sudo useradd -m -s /usr/bin/false james
+	- su - james
+	
+
+Day 2: Temporary User Setup with Expiry
+
+=> Sol-1:  
+	- sudo useradd -e 2026-12-07 james
+
+=> Sol-2: 
+	- sudo useradd -m -s /usr/bin/bash -e 2026-12-07 james
