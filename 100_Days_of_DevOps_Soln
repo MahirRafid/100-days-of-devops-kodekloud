@@ -19,3 +19,12 @@ Day 2: Temporary User Setup with Expiry
 
 => Sol-2: 
 	- sudo useradd -m -s /usr/bin/bash -e 2026-12-07 james
+
+
+Day 3: Secure Root SSH Access
+
+** ssh to all three app servers (stapp01, stapp02, stapp03)
+=> Sol-1: 
+	- sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
+	- sudo systemctl reload sshd
+	
