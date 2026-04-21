@@ -27,4 +27,13 @@ Day 3: Secure Root SSH Access
 => Sol-1: 
 	- sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 	- sudo systemctl reload sshd
-	
+
+Day 4: Script Execution Permissions
+
+=> Sol-1: 
+    - sudo chmod a+x /tmp/xfusioncorps.sh 
+    ** make sure that the script has read permission for all the users, if not, then: 
+    - sudo chmod a+rx /tmp/xfusioncorps.sh
+
+=> Sol-2: 
+    - sudo chmod 755 /tmp/xfusioncorps.sh	
