@@ -40,6 +40,15 @@ Day 4: Script Execution Permissions
     - sudo chmod 755 /tmp/xfusioncorps.sh
 
 
+Day 5: SElinux Installation and Configuration
+
+ => Sol-1: 
+    - sudo yum install selinux-policy selinux-policy-targeted policycoreutils policycoreutils-python-utils 
+    ** sestatus (check selinux status)
+    - sudo vi /etc/seliux/config
+    - SELINUX=disabled
+    
+
 Day 6: Create a Cron Job
 
  => Sol-1: 
