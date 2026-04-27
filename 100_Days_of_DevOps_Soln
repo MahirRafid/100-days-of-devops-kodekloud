@@ -1,12 +1,12 @@
 Day 1: Linux User Setup with Non-Interactive Shell
 
-** Need to login as root user for both solutions.
-=> Sol-1: 
+ ** Need to login as root user for both solutions.
+ => Sol-1: 
 	- which nologin
 	- sudo useradd -m -s /usr/sbin/nologin james
 	- su - james
 
-=> Sol-2: 
+ => Sol-2: 
 	- which false
 	- sudo useradd -m -s /usr/bin/false james
 	- su - james
@@ -14,26 +14,37 @@ Day 1: Linux User Setup with Non-Interactive Shell
 
 Day 2: Temporary User Setup with Expiry
 
-=> Sol-1:  
+ => Sol-1:  
 	- sudo useradd -e 2026-12-07 james
 
-=> Sol-2: 
+ => Sol-2: 
 	- sudo useradd -m -s /usr/bin/bash -e 2026-12-07 james
 
 
 Day 3: Secure Root SSH Access
 
-** ssh to all three app servers (stapp01, stapp02, stapp03)
-=> Sol-1: 
+ ** ssh to all three app servers (stapp01, stapp02, stapp03)
+ => Sol-1: 
 	- sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 	- sudo systemctl reload sshd
 
+
 Day 4: Script Execution Permissions
 
-=> Sol-1: 
+ => Sol-1: 
     - sudo chmod a+x /tmp/xfusioncorps.sh 
     ** make sure that the script has read permission for all the users, if not, then: 
     - sudo chmod a+rx /tmp/xfusioncorps.sh
 
-=> Sol-2: 
-    - sudo chmod 755 /tmp/xfusioncorps.sh	
+ => Sol-2: 
+    - sudo chmod 755 /tmp/xfusioncorps.sh
+
+
+Day 6: Create a Cron Job
+
+ => Sol-1: 
+    - sudo yum install cronie -y
+    - sudo systemctl start crond
+    - sudo systemctl enable crond
+    - sudo systemctl status crond
+    - sudo crontab -u root -e (& enter the cron given in the task)	
