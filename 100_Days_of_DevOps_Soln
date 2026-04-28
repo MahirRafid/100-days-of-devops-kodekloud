@@ -59,3 +59,12 @@ Day 6: Create a Cron Job
     - sudo systemctl enable crond
     - sudo systemctl status crond
     - sudo crontab -u root -e (& enter the cron given in the task)	
+
+
+Day 7: Linux SSH Authentication
+
+ => Sol-1: 
+    - ssh-keygen (& press enter to the default values)
+    - ssh-copy-id tony@stapp01
+    - ssh-copy-id steve@stapp02
+    - ssh-copy-id banner@stapp03
