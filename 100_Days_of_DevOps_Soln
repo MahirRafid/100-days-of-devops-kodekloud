@@ -44,7 +44,9 @@ Day 5: SElinux Installation and Configuration
 
  => Sol-1: 
     - sudo yum install selinux-policy selinux-policy-targeted policycoreutils policycoreutils-python-utils 
+    ** yum provides */selinux/config (check which yum packages contain the selinux config file)
     ** sestatus (check selinux status)
+    
     - sudo vi /etc/seliux/config
     - SELINUX=disabled
     
